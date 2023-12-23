@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from datetime import datetime, timezone
 from json import dumps
 from logging import INFO, WARNING, Formatter, LogRecord
@@ -71,3 +72,7 @@ def handle(event: AnyDict, context: AnyDict) -> None:
     for iteration in range(iterations):
         logger.info(f"Iteration {iteration}")
         sleep(0.01)
+
+
+if __name__ == "__main__":
+    handle({}, {})
