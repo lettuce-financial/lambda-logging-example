@@ -1,0 +1,40 @@
+[project]
+
+name = "example"
+
+dynamic = ["version", "readme"]
+
+dependencies = []
+
+
+[project.optional-dependencies]
+
+dist = [
+  "build==1.0.3",
+]
+
+
+[build-system]
+
+# Configure the project to use `setuptools`.
+requires = [
+  "setuptools==67.8.0",
+  "wheel==0.40.0",
+]
+build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools.dynamic]
+
+version = { file = ".version" }
+readme = { file = "README.md", content-type = "text/markdown" }
+
+
+[tool.setuptools.packages.find]
+
+# Configure the project's build to exclude `tests`.
+#
+# We prefer to collocate tests with the code under test, rather than creating a separate
+# tests directory tree. We therefore use an exclude pattern so that we don't ship our tests.
+where = ["src"]
+exclude = ["*tests*"]
