@@ -19,7 +19,7 @@ dist = [
 # Configure the project to use `setuptools`.
 requires = [
   "setuptools==67.8.0",
-  "wheel==0.40.0",
+  "wheel==0.42.0",
 ]
 build-backend = "setuptools.build_meta"
 
